@@ -57,7 +57,7 @@ export class EntitiesDashboardComponent implements OnInit {
   }
 
   checkZip() {
-    if (this.entityForm.value.zipCode.length === 9) {
+    if (this.entityForm.value.zipCode.length === 8) {
       fetch("https://viacep.com.br/ws/" + this.entityForm.value.zipCode + "/json/")
         .then((zipInfo) => zipInfo.json())
         .then((addressJson) => {
