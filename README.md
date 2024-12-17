@@ -17,6 +17,7 @@ Espero que seja possível avaliar minhas competências em Front-End, mesmo que e
 - Aplicar recursos de responsividade.
 
 Obs.: Gostaria de lembrar que Angular é uma tecnologia nova para mim. Até hoje, trabalhei somente com React no Front-End.
+
 Obs. 2: Não apliquei o ng-repeat, pois não encontrei referência para sua utilização no Angular 19.
 
 Mais uma vez, obrigado!
