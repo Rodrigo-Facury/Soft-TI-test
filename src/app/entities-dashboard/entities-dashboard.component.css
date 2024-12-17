@@ -1,0 +1,17 @@
+#dashboard {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#list-and-add-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin-top: 50px;
+}
+
+#dashboard-table {
+  margin-top: 25px;
+}

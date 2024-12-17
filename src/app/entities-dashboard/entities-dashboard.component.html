@@ -1,0 +1,86 @@
+<main id="dashboard">
+  <section id="list-and-add-button-container">
+    <button id="add-button" type="button" class="btn btn-success" data-bs-toggle="modal"
+      data-bs-target="#registerModal">Novo</button>
+    <table id="dashboard-table" class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of entities">
+          <td>{{ entity.document }}</td>
+          <td>{{ entity.name }}</td>
+          <td>{{ entity.address }}</td>
+          <td>{{ entity.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="registerModalLabel">Cadastro</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3" [formGroup]="entityForm">
+            <div class="col-12">
+              <label for="inputType" class="form-label">Tipo</label>
+              <select id="inputType" formControlName="type" class="form-select">
+                <option value="Física" selected>Física</option>
+                <option value="Jurídica">Jurídica</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="inputDocument" class="form-label">CPF/CNPJ</label>
+              <input type="text" formControlName="document" class="form-control" id="inputDocument">
+            </div>
+            <div class="col-12">
+              <label for="inputName" class="form-label">Nome</label>
+              <input type="text" formControlName="name" class="form-control" id="inputName">
+            </div>
+            <div class="col-12">
+              <label for="inputTradeName" class="form-label">Nome Fantasia</label>
+              <input type="text" formControlName="tradeName" class="form-control" id="inputTradeName">
+            </div>
+            <div class="col-md-4">
+              <label for="inputZip" class="form-label">CEP</label>
+              <input type="text" formControlName="zipCode" (keyup)="checkZip()" class="form-control" id="inputZip">
+            </div>
+            <div class="col-md-8">
+              <label for="inputAddress" class="form-label">Endereço</label>
+              <input type="text" formControlName="address" class="form-control" id="inputAddress">
+            </div>
+            <div class="col-md-6">
+              <label for="inputNeighborhood" class="form-label">Bairro</label>
+              <input type="text" formControlName="neighborhood" class="form-control" id="inputNeighborhood">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">Cidade</label>
+              <input type="text" formControlName="city" class="form-control" id="inputCity">
+            </div>
+            <div class="col-12">
+              <label for="inputPhoneNumber" class="form-label">Telefone</label>
+              <input type="text" formControlName="phoneNumber" class="form-control" id="inputPhoneNumber">
+            </div>
+            <div class="col-12">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control" id="inputEmail4">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" (click)="saveEntity()" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
